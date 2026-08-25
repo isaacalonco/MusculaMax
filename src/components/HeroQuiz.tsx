@@ -1,6 +1,6 @@
 import type React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, ShieldCheck, Dumbbell } from 'lucide-react';
+import { ChevronRight, ShieldCheck, Code2 } from 'lucide-react';
 
 export interface QuizQuestion {
   id: number;
@@ -35,20 +35,20 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
     >
       {/* Pill Badge */}
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-4 shadow-sm shadow-primary/20">
-        <Dumbbell className="w-3.5 h-3.5" />
-        <span>DIAGNÓSTICO MUSCULAMAX ({questionIndex + 1}/{totalQuestions})</span>
+        <Code2 className="w-3.5 h-3.5" />
+        <span>DIAGNÓSTICO DEVCODE ({questionIndex + 1}/{totalQuestions})</span>
       </div>
 
       {/* Hero Title */}
       <h1 className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-wide text-foreground leading-[0.95] mb-3">
-        {questionIndex === 0 ? 'QUAL É O NÍVEL DO SEU CORPO PRO SHAPE?' : currentQuestion.question}
+        {questionIndex === 0 ? 'QUAL É O NÍVEL DO SEU CÓDIGO PRO MERCADO?' : currentQuestion.question}
       </h1>
 
       {/* Subtitle */}
       <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
         {questionIndex === 0
-          ? 'Descubra em 2 minutos se seu treino de musculação está travado, em platô ou pronto pra evoluir a massa muscular com a metodologia MusculaMax.'
-          : 'Selecione a opção que melhor descreve seu treino e recuperação atual:'}
+          ? 'Descubra em 2 minutos se seu conhecimento em Python, Java e Engenharia de Software está travado no efeito tutorial ou pronto pra vagas de mercado.'
+          : 'Selecione a opção que melhor descreve sua experiência com programação e desenvolvimento:'}
       </p>
 
       {/* Grid de Opções de Pergunta */}
@@ -74,7 +74,7 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
       {/* Rodapé de Segurança / Trust */}
       <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
         <ShieldCheck className="w-4 h-4 text-success" />
-        <span>100% Gratuito & Avaliação Biomecânica MusculaMax</span>
+        <span>100% Gratuito & Avaliação de Código IA</span>
       </div>
     </motion.section>
   );

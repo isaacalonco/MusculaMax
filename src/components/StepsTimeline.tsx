@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const defaultSteps = [
-  'Você responde o diagnóstico de treino e mobilidade (2 min)',
-  'A IA MusculaMax gera sua ficha de musculação personalizada (ABC, ABCDE ou Upper/Lower)',
-  'Você recebe o treino no app com séries, repetições e cargas ideais',
-  'Se travar na carga ou sentir dor (ombro, joelho, lombar), o MusculaMax adapta a ficha na hora',
+  'Você responde o diagnóstico de código e lógica (2 min)',
+  'A IA DevCodeMax gera sua trilha prática personalizada (Python, Java, APIs REST e SQL)',
+  'Você constrói projetos reais do zero com orientação de código linha por linha',
+  'Se travar em um bug, exceção ou lógica, o DevCodeMax analisa e explica a correção na hora',
 ];
 
 interface StepsTimelineProps {
@@ -32,7 +32,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
         animate={{ opacity: 1, y: 0 }}
         className="text-foreground font-body font-bold text-lg mb-6 text-center"
       >
-        Como funciona a sua evolução no MusculaMax:
+        Como funciona a sua evolução no DevCodeMax:
       </motion.p>
 
       <div className="relative pl-8 text-left mb-8">
@@ -83,7 +83,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
             onClick={onComplete}
             className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-base tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all"
           >
-            <span>VER MEU PLANO PERSONALIZADO</span>
+            <span>VER MEU PLANO DEV PERSONALIZADO</span>
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.div>

@@ -1,3 +1,4 @@
+import type React from 'react';
 import { ShieldCheck, Lock, Database } from 'lucide-react';
 
 export const SecurityBadge: React.FC = () => {
@@ -21,9 +22,9 @@ export const SecurityBadge: React.FC = () => {
       </div>
 
       <p className="text-[11px] text-muted-foreground leading-relaxed">
-        MusculaMax © 2026. Todos os direitos reservados.
+        DevCodeMax © 2026. Todos os direitos reservados.
         <br />
-        <span className="opacity-70">Plataforma desenvolvida sob arquitetura segura de alta performance.</span>
+        <span className="opacity-70">Plataforma de Engenharia de Software desenvolvida sob arquitetura de alta performance.</span>
       </p>
     </footer>
   );

@@ -14,18 +14,18 @@ export const Header: React.FC<HeaderProps> = ({ currentStep, totalSteps }) => {
         {/* Treinador Avatar + Status */}
         <div className="flex items-center gap-3">
           <div className="relative shrink-0">
-            {/* SVG Avatar Fallback - MusculaMax */}
+            {/* SVG Avatar Fallback - Programming */}
             <div className="w-10 h-10 rounded-full border border-primary/40 bg-card flex items-center justify-center font-display text-primary font-bold text-lg overflow-hidden">
-              <span className="text-xl">🏋️‍♂️</span>
+              <span className="text-xl">👨‍💻</span>
             </div>
             {/* Status Online Pulsante */}
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-success rounded-full ring-2 ring-background animate-pulse" />
           </div>
           <div>
             <h4 className="font-body font-bold text-sm text-foreground leading-tight">
-              MusculaMax IA
+              DevCodeMax IA
             </h4>
-            <p className="font-body text-xs text-muted-foreground">Treinador Inteligente Online</p>
+            <p className="font-body text-xs text-muted-foreground">Mentor Python & Java Online</p>
           </div>
         </div>
 

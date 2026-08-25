@@ -9,38 +9,38 @@ import { SecurityBadge } from './components/SecurityBadge';
 const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: 'QUAL É O SEU OBJETIVO PRINCIPAL NA MUSCULAÇÃO HOJE?',
+    question: 'QUAL É O SEU OBJETIVO PRINCIPAL EM PROGRAMAÇÃO HOJE?',
     options: [
-      { label: '⚡ Sair do platô e parar de treinar sem ver resultados', level: 'travado', points: 20 },
-      { label: '🔥 Ganhar massa muscular (hipertrofia) e definir o shape', level: 'ativo', points: 30 },
-      { label: '🏋️‍♂️ Aumentar força máxima e construir densidade muscular', level: 'pronto', points: 40 },
+      { label: '⚡ Sair do efeito tutorial e aprender a criar projetos do zero', level: 'travado', points: 20 },
+      { label: '🔥 Migrar de carreira / conseguir vaga Backend em Python ou Java', level: 'ativo', points: 30 },
+      { label: '🚀 Dominar Arquitetura de Software, APIs REST e Microsserviços', level: 'pronto', points: 40 },
     ],
   },
   {
     id: 2,
-    question: 'QUANTAS VEZES VOCÊ VAI À ACADEMIA POR SEMANA?',
+    question: 'QUAL É O SEU NÍVEL DE PRÁTICA EM PYTHON OU JAVA?',
     options: [
-      { label: '🏃 1 a 2 vezes por semana (sem rotina fixa)', level: 'travado', points: 15 },
-      { label: '⚡ 3 a 4 vezes por semana (treino moderado)', level: 'ativo', points: 30 },
-      { label: '🏆 5 a 6 vezes por semana (divisão ABCDE / Push-Pull-Legs)', level: 'pronto', points: 45 },
+      { label: '💻 Sei apenas sintaxe básica, variáveis e laços de repetição', level: 'travado', points: 15 },
+      { label: '⚡ Escrevo APIs básicas e me conecto com Banco de Dados SQL', level: 'ativo', points: 30 },
+      { label: '🏆 Domino POO avançada, Estrutura de Dados e Padrões de Projeto', level: 'pronto', points: 45 },
     ],
   },
   {
     id: 3,
-    question: 'SENTE DORES ARTICULARES EM EXERCÍCIOS COMO SUPINO OU AGACHAMENTO?',
+    question: 'COMO VOCÊ REAGE QUANDO ENCONTRA UM BUG OU EXCEÇÃO NO CÓDIGO?',
     options: [
-      { label: '😫 Sim, sinto fisgadas no ombro, joelho ou lombar', level: 'travado', points: 10 },
-      { label: '🦵 Às vezes sinto desconforto ao subir cargas pesadas', level: 'ativo', points: 25 },
-      { label: '💪 Raro, executo os movimentos com mobilidade perfeita', level: 'pronto', points: 40 },
+      { label: '😫 Fico horas travado e não sei por onde começar a corrigir', level: 'travado', points: 10 },
+      { label: '🔍 Copio o erro no Google / ChatGPT sem entender a causa raiz', level: 'ativo', points: 25 },
+      { label: '⚙️ Leio a stack trace, debugo linha a linha e corrijo a lógica', level: 'pronto', points: 40 },
     ],
   },
   {
     id: 4,
-    question: 'COMO É A SUA PREPARAÇÃO ANTES DE PEGAR PESO?',
+    question: 'COMO É O SEU PROCESSO DE ESTUDOS NO DIA A DIA?',
     options: [
-      { label: '🚫 Chego na academia e coloco logo a carga máxima', level: 'travado', points: 10 },
-      { label: '🏃 Faço 5 min de esteira rápida pra esquentar', level: 'ativo', points: 25 },
-      { label: '🔥 Faço mobilidade articular e séries de feed (aquecimento)', level: 'pronto', points: 40 },
+      { label: '🚫 Apenas assisto videoaulas sem digitar nenhuma linha de código', level: 'travado', points: 10 },
+      { label: '🏃 Copio projetos de tutoriais sem entender os conceitos profundos', level: 'ativo', points: 25 },
+      { label: '🔥 Construo sistemas reais, leio documentação e subo no GitHub', level: 'pronto', points: 40 },
     ],
   },
 ];
@@ -67,7 +67,7 @@ export function App() {
 
   const calculatedTotalScore = scores.reduce((acc, curr) => acc + curr, 0);
 
-  // Define a classificação geral do corpo do praticante
+  // Define a classificação geral do nível do desenvolvedor
   const travadoCount = levels.filter((l) => l === 'travado').length;
   const prontoCount = levels.filter((l) => l === 'pronto').length;
   const overallDiagnostic: 'travado' | 'ativo' | 'pronto' =
@@ -108,13 +108,13 @@ export function App() {
               {/* Diagnóstico em Destaque */}
               <div className="max-w-md mx-auto mb-6 p-4 rounded-xl bg-card border border-border">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                  DIAGNÓSTICO DE HIPERTROFIA CONCLUÍDO
+                  DIAGNÓSTICO DEV CONCLUÍDO
                 </span>
                 <h2 className="font-display text-3xl font-bold uppercase text-foreground mt-1">
-                  STATUS SHAPE: <span className="text-primary uppercase">{overallDiagnostic}</span>
+                  NÍVEL DEV: <span className="text-primary uppercase">{overallDiagnostic === 'travado' ? 'INICIANTE / TRAVADO' : overallDiagnostic === 'ativo' ? 'INTERMEDIÁRIO / EM EVOLUÇÃO' : 'PRONTO PARA VAGAS'}</span>
                 </h2>
                 <p className="font-body text-xs text-muted-foreground mt-1">
-                  Índice de Prontidão Muscular: <strong className="text-foreground">{calculatedTotalScore}/165</strong>
+                  Score de Prontidão em Código: <strong className="text-foreground">{calculatedTotalScore}/165</strong>
                 </p>
               </div>
 

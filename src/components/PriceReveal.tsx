@@ -7,14 +7,14 @@ interface PriceRevealProps {
 }
 
 const competitorCosts = [
-  { label: 'Personal Trainer Presencial', monthly: 'R$400/mês', yearly: 'R$4.800/ano' },
-  { label: 'Consultoria Online Fitness', monthly: 'R$200/mês', yearly: 'R$2.400/ano' },
+  { label: 'Bootcamp Tradicional de Dev', monthly: 'R$500/mês', yearly: 'R$6.000/ano' },
+  { label: 'Mentoria Particular de Código', monthly: 'R$300/mês', yearly: 'R$3.600/ano' },
 ];
 
 const features = [
-  { emoji: '🏋️‍♂️', text: 'Fichas completas adaptadas pro seu objetivo (Hipertrofia ou Definição)' },
-  { emoji: '🦾', text: 'Correção de execução e técnicas para não lesionar articulações' },
-  { emoji: '⚡', text: 'Protocolos de aquecimento e mobilidade pré-treino inclusos' },
+  { emoji: '🐍', text: 'Trilha Python: Scripts, Automação, APIs REST e Django / FastAPI' },
+  { emoji: '☕', text: 'Trilha Java: POO avançada, Spring Boot, Hibernate e Microsserviços' },
+  { emoji: '💻', text: 'Projetos práticos reais para construir seu portfólio profissional no GitHub' },
 ];
 
 export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
@@ -34,20 +34,20 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       >
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs sm:text-sm font-bold">
           <Zap className="w-4 h-4" />
-          <span>PRÉ-LANÇAMENTO MUSCULAMAX — ÚLTIMOS DIAS</span>
+          <span>PRÉ-LANÇAMENTO DEVCODEMAX — ÚLTIMOS DIAS</span>
         </span>
       </motion.div>
 
       {/* Eyebrow Label */}
       <div className="mb-2">
         <span className="text-xs font-bold tracking-[0.2em] text-primary/80 uppercase">
-          PLANO ANUAL MUSCULAMAX PRO
+          PLANO ANUAL DEVCODEMAX PRO
         </span>
       </div>
 
       <div className="space-y-4 mb-6">
         <p className="text-foreground/90 font-body text-base">
-          Acesso completo à plataforma inteligente <span className="font-bold text-foreground">MusculaMax</span> por{' '}
+          Acesso completo ao mentor inteligente <span className="font-bold text-foreground">DevCodeMax</span> por{' '}
           <span className="font-bold text-foreground">1 ANO INTEIRO</span>
         </p>
 
@@ -81,7 +81,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs bg-primary/[0.06] border border-primary/[0.12]">
           <span className="text-muted-foreground">=</span>
           <span className="font-bold text-foreground">R$5,58/mês</span>
-          <span className="text-muted-foreground">— menos que uma dose de pré-treino</span>
+          <span className="text-muted-foreground">— menos que um café especial de dev</span>
         </div>
       </div>
 
@@ -106,7 +106,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       {/* Tabela de Comparação com Concorrentes */}
       <div className="space-y-3 mb-8">
         <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground text-left px-1">
-          Comparação no Mercado de Academias:
+          Comparação com o Mercado Dev:
         </p>
 
         {competitorCosts.map((comp, idx) => (
@@ -122,16 +122,16 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
           </div>
         ))}
 
-        {/* Card Destaque MusculaMax */}
+        {/* Card Destaque DevCodeMax */}
         <div className="flex items-center justify-between px-4 py-3.5 rounded-xl bg-primary/15 border-2 border-primary/50 text-left shadow-lg shadow-primary/20">
           <div>
-            <span className="text-base font-bold text-primary block">MusculaMax PRO</span>
-            <span className="text-xs text-primary/80">Fichas & Biomecânica Inteligente</span>
+            <span className="text-base font-bold text-primary block">DevCodeMax PRO</span>
+            <span className="text-xs text-primary/80">Mentoria & Projetos em Python e Java</span>
           </div>
           <div className="flex flex-col items-end gap-1">
             <span className="text-lg font-extrabold text-primary">R$67/ano</span>
             <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold">
-              54x MAIS BARATO
+              89x MAIS BARATO
             </span>
           </div>
         </div>
@@ -144,7 +144,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         onClick={onSelectPlan}
         className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-lg tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all mb-4"
       >
-        <span>GARANTIR MUSCULAMAX PRO</span>
+        <span>GARANTIR DEVCODEMAX PRO</span>
         <ArrowRight className="w-5 h-5" />
       </motion.button>
 
