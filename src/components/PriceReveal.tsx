@@ -1,31 +1,31 @@
 import type React from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { Zap, CheckCircle2, ShieldCheck, ArrowRight, Terminal, Coffee, GitBranch } from 'lucide-react';
+import { Zap, CheckCircle2, ShieldCheck, ArrowRight, FileSpreadsheet, BarChart3, Table } from 'lucide-react';
 
 interface PriceRevealProps {
   onSelectPlan: () => void;
 }
 
 const competitorCosts = [
-  { label: 'Bootcamp Tradicional de Dev', monthly: 'R$500/mês', yearly: 'R$6.000/ano' },
-  { label: 'Mentoria Particular de Código', monthly: 'R$300/mês', yearly: 'R$3.600/ano' },
+  { label: 'Curso Presencial de Excel', monthly: 'R$450/mês', yearly: 'R$2.700/curso' },
+  { label: 'Treinamento Corporativo de Planilhas', monthly: 'R$250/mês', yearly: 'R$1.500/curso' },
 ];
 
 const features = [
   {
-    icon: <Terminal className="w-4 h-4 text-primary" />,
-    title: 'Trilha Python Full Backend',
-    text: 'Scripts, Automação, APIs REST e frameworks Django / FastAPI.',
+    icon: <FileSpreadsheet className="w-4 h-4 text-primary" />,
+    title: 'Fórmulas Avançadas Sem Mistério',
+    text: 'Domine XLOOKUP, PROCV, SEERRO, SOMASE e Projeções Financeiras com facilidade.',
   },
   {
-    icon: <Coffee className="w-4 h-4 text-primary" />,
-    title: 'Trilha Java & Spring Boot',
-    text: 'POO avançada, Spring Boot, Hibernate, SQL e Microsserviços.',
+    icon: <BarChart3 className="w-4 h-4 text-primary" />,
+    title: 'Dashboards Executivos Interativos',
+    text: 'Crie relatórios gráficos visuais de alto impacto para impressionar gestores.',
   },
   {
-    icon: <GitBranch className="w-4 h-4 text-primary" />,
-    title: 'Portfólio Profissional no GitHub',
-    text: 'Projetos reais do mundo corporativo prontos para destacar no LinkedIn.',
+    icon: <Table className="w-4 h-4 text-primary" />,
+    title: 'Tabelas Dinâmicas & Power Query',
+    text: 'Automatize dados brutos e reduza relatórios de 4 horas para 5 minutos.',
   },
 ];
 
@@ -55,20 +55,20 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       <motion.div variants={itemVariants} className="flex justify-center mb-5">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/35 text-primary text-xs sm:text-sm font-bold shadow-sm shadow-primary/20">
           <Zap className="w-4 h-4" />
-          <span>PRÉ-LANÇAMENTO DEVCODEMAX — ÚLTIMOS DIAS</span>
+          <span>PRÉ-LANÇAMENTO EXCELMAX — ÚLTIMOS DIAS</span>
         </span>
       </motion.div>
 
       {/* Eyebrow Label */}
       <motion.div variants={itemVariants} className="mb-3">
         <span className="text-xs font-bold tracking-[0.2em] text-primary/90 uppercase">
-          PLANO ANUAL DEVCODEMAX PRO
+          PLANO ANUAL EXCELMAX PRO
         </span>
       </motion.div>
 
       <motion.div variants={itemVariants} className="space-y-4 mb-8">
         <p className="text-foreground/90 font-body text-base leading-relaxed">
-          Acesso completo ao mentor inteligente <span className="font-bold text-foreground">DevCodeMax</span> por{' '}
+          Acesso completo ao mentor de planilhas <span className="font-bold text-foreground">ExcelMax</span> por{' '}
           <span className="font-bold text-foreground">1 ANO INTEIRO</span>
         </p>
 
@@ -100,7 +100,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs bg-primary/10 border border-primary/20">
           <span className="text-muted-foreground">=</span>
           <span className="font-bold text-foreground">R$5,58/mês</span>
-          <span className="text-muted-foreground">— menos que um café especial de dev</span>
+          <span className="text-muted-foreground">— menos que um café no trabalho</span>
         </div>
       </motion.div>
 
@@ -125,7 +125,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       {/* Tabela de Comparação com Concorrentes */}
       <motion.div variants={itemVariants} className="space-y-3 mb-8">
         <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground text-left px-1 mb-2">
-          Comparação no Mercado Dev:
+          Comparação no Mercado de Cursos:
         </p>
 
         {competitorCosts.map((comp, idx) => (
@@ -141,16 +141,16 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
           </div>
         ))}
 
-        {/* Card Destaque DevCodeMax com Maior Espaçamento */}
+        {/* Card Destaque ExcelMax */}
         <div className="flex items-center justify-between px-4 py-4 rounded-xl bg-primary/15 border-2 border-primary/60 text-left shadow-lg shadow-primary/25">
           <div>
-            <span className="text-base font-bold text-primary block">DevCodeMax PRO</span>
-            <span className="text-xs text-primary/80">Mentoria & Projetos em Python e Java</span>
+            <span className="text-base font-bold text-primary block">ExcelMax PRO</span>
+            <span className="text-xs text-primary/80">Fórmulas, Dashboards & Power Query</span>
           </div>
           <div className="flex flex-col items-end gap-1">
             <span className="text-lg font-extrabold text-primary">R$67/ano</span>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold">
-              89x MAIS BARATO
+              40x MAIS BARATO
             </span>
           </div>
         </div>
@@ -164,7 +164,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         onClick={onSelectPlan}
         className="w-full py-4.5 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-lg tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all mb-6"
       >
-        <span>GARANTIR DEVCODEMAX PRO</span>
+        <span>GARANTIR EXCELMAX PRO</span>
         <ArrowRight className="w-5 h-5" />
       </motion.button>
 

@@ -1,27 +1,27 @@
 import type React from 'react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, FileCheck, Cpu, Code2, Wrench } from 'lucide-react';
+import { ArrowRight, FileCheck, Table, BarChart3, Wrench } from 'lucide-react';
 
 const defaultSteps = [
   {
-    title: 'Diagnóstico de Código',
-    text: 'Você responde a avaliação rápida de sintaxe, lógica e arquitetura (2 min).',
+    title: 'Diagnóstico de Planilhas & Fórmulas',
+    text: 'Você responde a avaliação rápida de fórmulas, Tabelas Dinâmicas e gráficos (2 min).',
     icon: <FileCheck className="w-4 h-4 text-primary" />,
   },
   {
-    title: 'Plano Dev Personalizado',
-    text: 'A IA DevCodeMax mapeia sua trilha prática (Python, Java, APIs REST e SQL).',
-    icon: <Cpu className="w-4 h-4 text-primary" />,
+    title: 'Trilha Prática Personalizada',
+    text: 'A IA ExcelMax gera seu roteiro (PROCV/XLOOKUP, SE/SEERRO, Power Query e Dashboards).',
+    icon: <Table className="w-4 h-4 text-primary" />,
   },
   {
-    title: 'Construção de Projetos Reais',
-    text: 'Você constrói sistemas do zero com orientação de código linha por linha.',
-    icon: <Code2 className="w-4 h-4 text-primary" />,
+    title: 'Planilhas Modelo para Download',
+    text: 'Você treina na prática com dados reais de mercado e cria relatórios profissionais.',
+    icon: <BarChart3 className="w-4 h-4 text-primary" />,
   },
   {
-    title: 'Feedback & Correção Instantânea',
-    text: 'Se travar em um bug, o DevCodeMax analisa a stack trace e corrige o código na hora.',
+    title: 'Correção de Erros de Fórmulas na Hora',
+    text: 'Se a fórmula der erro (#N/A, #VALOR!), o ExcelMax identifica a causa e corrige sua planilha na hora.',
     icon: <Wrench className="w-4 h-4 text-primary" />,
   },
 ];
@@ -49,7 +49,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
         animate={{ opacity: 1, y: 0 }}
         className="text-foreground font-body font-bold text-lg sm:text-xl mb-8 text-center"
       >
-        Como funciona a sua evolução no DevCodeMax:
+        Como funciona a sua evolução no ExcelMax:
       </motion.p>
 
       <div className="relative pl-9 text-left mb-8 space-y-6">
@@ -61,7 +61,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
             key={i}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 + i * 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.3 + i * 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             onAnimationComplete={() => {
               if (i === steps.length - 1) {
                 setShowButton(true);
@@ -73,7 +73,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.2 + i * 0.3, type: 'spring', stiffness: 300, damping: 20 }}
+              transition={{ delay: 0.3 + i * 0.3, type: 'spring', stiffness: 300, damping: 20 }}
               className="absolute -left-9 top-0.5 w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/30 font-bold text-white text-xs border border-primary-foreground/20"
             >
               {i + 1}
@@ -110,7 +110,7 @@ export const StepsTimeline: React.FC<StepsTimelineProps> = ({
             onClick={onComplete}
             className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-base tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all mt-4"
           >
-            <span>VER MEU PLANO DEV PERSONALIZADO</span>
+            <span>VER MEU PLANO EXCEL PERSONALIZADO</span>
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.div>

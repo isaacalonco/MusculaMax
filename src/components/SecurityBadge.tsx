@@ -22,9 +22,9 @@ export const SecurityBadge: React.FC = () => {
       </div>
 
       <p className="text-[11px] text-muted-foreground leading-relaxed">
-        DevCodeMax © 2026. Todos os direitos reservados.
+        ExcelMax © 2026. Todos os direitos reservados.
         <br />
-        <span className="opacity-70">Plataforma de Engenharia de Software desenvolvida sob arquitetura de alta performance.</span>
+        <span className="opacity-70">Plataforma de Treinamento Corporativo desenvolvida sob arquitetura de alta performance.</span>
       </p>
     </footer>
   );

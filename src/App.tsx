@@ -9,38 +9,38 @@ import { SecurityBadge } from './components/SecurityBadge';
 const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: 'QUAL É O SEU OBJETIVO PRINCIPAL EM PROGRAMAÇÃO HOJE?',
+    question: 'QUAL É O SEU OBJETIVO PRINCIPAL COM O EXCEL HOJE?',
     options: [
-      { label: '⚡ Sair do efeito tutorial e aprender a criar projetos do zero', level: 'travado', points: 20 },
-      { label: '🔥 Migrar de carreira / conseguir vaga Backend em Python ou Java', level: 'ativo', points: 30 },
-      { label: '🚀 Dominar Arquitetura de Software, APIs REST e Microsserviços', level: 'pronto', points: 40 },
+      { label: '⚡ Sair do básico e parar de passar sufoco com planilhas no trabalho', level: 'travado', points: 20 },
+      { label: '🔥 Dominar Fórmulas Avançadas (PROCV, XLOOKUP, SE) e Tabelas Dinâmicas', level: 'ativo', points: 30 },
+      { label: '📊 Criar Dashboards executivos profissionais de alto impacto visual', level: 'pronto', points: 40 },
     ],
   },
   {
     id: 2,
-    question: 'QUAL É O SEU NÍVEL DE PRÁTICA EM PYTHON OU JAVA?',
+    question: 'QUAL É O SEU NÍVEL ATUAL EM PLANILHAS ELETRÔNICAS?',
     options: [
-      { label: '💻 Sei apenas sintaxe básica, variáveis e laços de repetição', level: 'travado', points: 15 },
-      { label: '⚡ Escrevo APIs básicas e me conecto com Banco de Dados SQL', level: 'ativo', points: 30 },
-      { label: '🏆 Domino POO avançada, Estrutura de Dados e Padrões de Projeto', level: 'pronto', points: 45 },
+      { label: '📈 Básico: Sei apenas SOMAR, MÉDIA e fazer formatação simples', level: 'travado', points: 15 },
+      { label: '⚡ Intermediário: Uso PROCV e filtros, mas me travo em fórmulas compostas', level: 'ativo', points: 30 },
+      { label: '🏆 Avançado: Crio relatórios dinâmicos, indicadores KPI e automações', level: 'pronto', points: 45 },
     ],
   },
   {
     id: 3,
-    question: 'COMO VOCÊ REAGE QUANDO ENCONTRA UM BUG OU EXCEÇÃO NO CÓDIGO?',
+    question: 'O QUE ACONTECE QUANDO VOCÊ ENCONTRA ERROS DE FÓRMULAS (#N/A, #VALOR!)?',
     options: [
-      { label: '😫 Fico horas travado e não sei por onde começar a corrigir', level: 'travado', points: 10 },
-      { label: '🔍 Copio o erro no Google / ChatGPT sem entender a causa raiz', level: 'ativo', points: 25 },
-      { label: '⚙️ Leio a stack trace, debugo linha a linha e corrijo a lógica', level: 'pronto', points: 40 },
+      { label: '😫 Fico horas tentando descobrir e me sinto inseguro nas reuniões', level: 'travado', points: 10 },
+      { label: '🔍 Procuro no YouTube ou ChatGPT sem entender o funcionamento real', level: 'ativo', points: 25 },
+      { label: '⚙️ Identifico se é erro de busca, sintaxe ou tipo de dado e corrijo rápido', level: 'pronto', points: 40 },
     ],
   },
   {
     id: 4,
-    question: 'COMO É O SEU PROCESSO DE ESTUDOS NO DIA A DIA?',
+    question: 'COMO É O SEU PROCESSO DE TRABALHO COM DADOS NO DIA A DIA?',
     options: [
-      { label: '🚫 Apenas assisto videoaulas sem digitar nenhuma linha de código', level: 'travado', points: 10 },
-      { label: '🏃 Copio projetos de tutoriais sem entender os conceitos profundos', level: 'ativo', points: 25 },
-      { label: '🔥 Construo sistemas reais, leio documentação e subo no GitHub', level: 'pronto', points: 40 },
+      { label: '🚫 Faço tudo manualmente e perco horas em tarefas repetitivas', level: 'travado', points: 10 },
+      { label: '🏃 Copio planilhas prontas de terceiros mas me travo ao alterar algo', level: 'ativo', points: 25 },
+      { label: '📊 Automatizo relatórios, crio visualizações visuais e economizo horas', level: 'pronto', points: 40 },
     ],
   },
 ];
@@ -67,7 +67,7 @@ export function App() {
 
   const calculatedTotalScore = scores.reduce((acc, curr) => acc + curr, 0);
 
-  // Define a classificação geral do nível do desenvolvedor
+  // Define a classificação geral do nível de Excel do usuário
   const travadoCount = levels.filter((l) => l === 'travado').length;
   const prontoCount = levels.filter((l) => l === 'pronto').length;
   const overallDiagnostic: 'travado' | 'ativo' | 'pronto' =
@@ -108,13 +108,13 @@ export function App() {
               {/* Diagnóstico em Destaque */}
               <div className="max-w-md mx-auto mb-6 p-4 rounded-xl bg-card border border-border">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                  DIAGNÓSTICO DEV CONCLUÍDO
+                  DIAGNÓSTICO EXCELPRO CONCLUÍDO
                 </span>
                 <h2 className="font-display text-3xl font-bold uppercase text-foreground mt-1">
-                  NÍVEL DEV: <span className="text-primary uppercase">{overallDiagnostic === 'travado' ? 'INICIANTE / TRAVADO' : overallDiagnostic === 'ativo' ? 'INTERMEDIÁRIO / EM EVOLUÇÃO' : 'PRONTO PARA VAGAS'}</span>
+                  NÍVEL EXCEL: <span className="text-primary uppercase">{overallDiagnostic === 'travado' ? 'INICIANTE / BÁSICO' : overallDiagnostic === 'ativo' ? 'INTERMEDIÁRIO' : 'PRONTO PARA DASHBOARDS'}</span>
                 </h2>
                 <p className="font-body text-xs text-muted-foreground mt-1">
-                  Score de Prontidão em Código: <strong className="text-foreground">{calculatedTotalScore}/165</strong>
+                  Score de Prontidão em Planilhas: <strong className="text-foreground">{calculatedTotalScore}/165</strong>
                 </p>
               </div>
 

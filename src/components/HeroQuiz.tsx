@@ -1,6 +1,6 @@
 import type React from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { ChevronRight, ShieldCheck, Code2, Terminal, Cpu, Rocket, Sparkles } from 'lucide-react';
+import { ChevronRight, ShieldCheck, FileSpreadsheet, BarChart3, PieChart, Sparkles } from 'lucide-react';
 
 export interface QuizQuestion {
   id: number;
@@ -21,9 +21,9 @@ interface HeroQuizProps {
 }
 
 const optionIconsMap = [
-  <Terminal key="0" className="w-5 h-5 text-primary shrink-0" />,
-  <Cpu key="1" className="w-5 h-5 text-primary shrink-0" />,
-  <Rocket key="2" className="w-5 h-5 text-primary shrink-0" />,
+  <FileSpreadsheet key="0" className="w-5 h-5 text-primary shrink-0" />,
+  <BarChart3 key="1" className="w-5 h-5 text-primary shrink-0" />,
+  <PieChart key="2" className="w-5 h-5 text-primary shrink-0" />,
 ];
 
 const containerVariants: Variants = {
@@ -67,8 +67,8 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
       {/* Pill Badge Animado */}
       <motion.div variants={itemVariants} className="mb-5">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/35 text-primary text-xs font-bold tracking-[0.2em] uppercase shadow-sm shadow-primary/20">
-          <Code2 className="w-4 h-4 text-primary" />
-          <span>DIAGNÓSTICO DEVCODE ({questionIndex + 1}/{totalQuestions})</span>
+          <FileSpreadsheet className="w-4 h-4 text-primary" />
+          <span>DIAGNÓSTICO EXCELPRO ({questionIndex + 1}/{totalQuestions})</span>
         </div>
       </motion.div>
 
@@ -77,7 +77,7 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
         variants={itemVariants}
         className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-wide text-foreground leading-[0.95] mb-4"
       >
-        {questionIndex === 0 ? 'QUAL É O NÍVEL DO SEU CÓDIGO PRO MERCADO?' : currentQuestion.question}
+        {questionIndex === 0 ? 'QUAL É O NÍVEL DO SEU EXCEL PRO MERCADO?' : currentQuestion.question}
       </motion.h1>
 
       {/* Subtitle com Margem Adequada */}
@@ -86,8 +86,8 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
         className="font-body text-sm sm:text-base text-foreground/80 leading-relaxed mb-8 max-w-sm"
       >
         {questionIndex === 0
-          ? 'Descubra em 2 minutos se seu conhecimento em Python, Java e Engenharia de Software está travado ou pronto pra vagas de mercado.'
-          : 'Selecione a opção que melhor descreve sua rotina de código e prática:'}
+          ? 'Descubra em 2 minutos se seu conhecimento de Excel, Fórmulas Avançadas e Dashboards está travado no básico ou pronto para o mercado corporativo.'
+          : 'Selecione a opção que melhor descreve sua experiência com planilhas:'}
       </motion.p>
 
       {/* Grid de Opções com Espaçamento Ajustado */}
@@ -123,7 +123,7 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({
         className="flex items-center justify-center gap-2 text-xs text-muted-foreground pt-4 border-t border-border/40 w-full"
       >
         <ShieldCheck className="w-4 h-4 text-success shrink-0" />
-        <span>100% Gratuito & Avaliação de Código por IA</span>
+        <span>100% Gratuito & Avaliação Prática de Excel por IA</span>
         <Sparkles className="w-3.5 h-3.5 text-primary shrink-0 ml-1" />
       </motion.div>
     </motion.section>
