@@ -2,38 +2,38 @@
 
 @layer base {
   :root {
-    /* Cores Base do Tema Dark Blue / Tech Navy */
-    --background: 222 47% 6%;          /* #070A12 - Dark Obsidian Navy */
-    --foreground: 210 40% 98%;        /* #F8FAFC */
+    /* Cores Base do Tema Dark Green / Emerald Excel */
+    --background: 150 40% 5%;          /* #05120A - Deep Emerald Obsidian */
+    --foreground: 145 30% 96%;        /* #F0FDF4 */
 
     /* Cores de Superfície e Modais */
-    --card: 222 40% 10%;              /* #0F172A - Deep Slate Blue */
-    --card-foreground: 210 40% 98%;
-    --popover: 222 40% 10%;
-    --popover-foreground: 210 40% 98%;
+    --card: 150 35% 8%;               /* #0A1F12 - Dark Slate Green */
+    --card-foreground: 145 30% 96%;
+    --popover: 150 35% 8%;
+    --popover-foreground: 145 30% 96%;
 
-    /* Cores de Ação e Destaque Tech Blue */
-    --primary: 217 91% 60%;           /* #3B82F6 - Electric Blue */
+    /* Cores de Ação e Destaque Excel Green */
+    --primary: 142 71% 45%;           /* #16A34A - Vibrant Emerald Green */
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --accent: 217 91% 60%;            /* #3B82F6 */
+    --accent: 142 71% 45%;            /* #16A34A */
     --accent-foreground: 0 0% 100%;
 
     /* Elementos Secundários e Desativados */
-    --secondary: 222 35% 15%;         /* #1E293B */
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 30% 18%;             /* #334155 */
-    --muted-foreground: 215 20% 65%;  /* #94A3B8 */
+    --secondary: 150 25% 13%;         /* #143621 */
+    --secondary-foreground: 145 30% 96%;
+    --muted: 150 20% 17%;             /* #1B432A */
+    --muted-foreground: 145 15% 65%;  /* #8BB89B */
 
     /* Status e Alertas */
-    --success: 145 63% 42%;          /* #22C55E - Neon Green */
+    --success: 142 71% 45%;          /* #16A34A - Neon Green */
     --success-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;        /* #EF4444 - Bright Red */
     --destructive-foreground: 0 0% 100%;
 
     /* Bordas e Inputs */
-    --border: 222 30% 20%;            /* #1E293B */
-    --input: 222 35% 14%;             /* #1E293B */
-    --ring: 217 91% 60%;              /* #3B82F6 */
+    --border: 150 25% 18%;            /* #19442A */
+    --input: 150 25% 13%;             /* #143621 */
+    --ring: 142 71% 45%;              /* #16A34A */
 
     /* Arredondamento Padrão */
     --radius: 0.5rem;
@@ -50,7 +50,7 @@
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-foreground: hsl(var(--color-card-foreground));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-secondary: hsl(var(--secondary));
@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.02em;
 }
 
-/* Glassmorphism e Glow Effects Customizados Azul */
+/* Glassmorphism e Glow Effects Customizados Verde Emerald */
 .bg-glow-radial {
   background-color: hsl(var(--primary) / 0.4);
   filter: blur(40px);
