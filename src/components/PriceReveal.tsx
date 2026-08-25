@@ -51,30 +51,30 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       animate="visible"
       className="py-6 sm:py-8 w-full max-w-md mx-auto px-4 sm:px-6 text-center"
     >
-      {/* Badge de Pré-lançamento */}
+      {/* Badge de Pré-lançamento Vitalício */}
       <motion.div variants={itemVariants} className="flex justify-center mb-5">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/35 text-primary text-xs sm:text-sm font-bold shadow-sm shadow-primary/20">
           <Zap className="w-4 h-4" />
-          <span>PRÉ-LANÇAMENTO EXCELMAX — ÚLTIMOS DIAS</span>
+          <span>OFERTA VITALÍCIA EXCELMAX — ÚLTIMAS VAGAS</span>
         </span>
       </motion.div>
 
       {/* Eyebrow Label */}
       <motion.div variants={itemVariants} className="mb-3">
         <span className="text-xs font-bold tracking-[0.2em] text-primary/90 uppercase">
-          PLANO ANUAL EXCELMAX PRO
+          ACESSO VITALÍCIO PRO
         </span>
       </motion.div>
 
       <motion.div variants={itemVariants} className="space-y-4 mb-8">
         <p className="text-foreground/90 font-body text-base leading-relaxed">
-          Acesso completo ao mentor de planilhas <span className="font-bold text-foreground">ExcelMax</span> por{' '}
-          <span className="font-bold text-foreground">1 ANO INTEIRO</span>
+          Acesso completo e permanente ao mentor de planilhas <span className="font-bold text-foreground">ExcelMax</span> com{' '}
+          <span className="font-bold text-foreground">PAGAMENTO ÚNICO</span>
         </p>
 
-        {/* Preço Antigo Risca-tudo com Maior Espaçamento */}
+        {/* Preço Antigo Risca-tudo */}
         <div className="relative inline-block my-2">
-          <span className="text-2xl text-muted-foreground font-medium">R$127/ano</span>
+          <span className="text-2xl text-muted-foreground font-medium">R$97,00</span>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -83,24 +83,25 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
           />
         </div>
 
-        {/* Preço Promocional com Glow Radial */}
+        {/* Preço Promocional Vitalício com Glow Radial */}
         <motion.div
           variants={itemVariants}
           className="relative my-4"
         >
           <div className="text-6xl sm:text-7xl font-display font-bold text-primary relative inline-block">
-            R$67
-            <span className="text-2xl font-semibold text-foreground/80">/ano</span>
+            R$27,90
+            <span className="text-xl sm:text-2xl font-semibold text-foreground/80 block sm:inline sm:ml-2">
+              (Vitalício)
+            </span>
             {/* Glow Blur Background */}
             <div className="absolute inset-0 blur-2xl bg-primary/40 -z-10 scale-150 rounded-full animate-pulse" />
           </div>
         </motion.div>
 
-        {/* Equivalência por Mês */}
+        {/* Pagamento Único Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs bg-primary/10 border border-primary/20">
-          <span className="text-muted-foreground">=</span>
-          <span className="font-bold text-foreground">R$5,58/mês</span>
-          <span className="text-muted-foreground">— menos que um café no trabalho</span>
+          <span className="font-bold text-foreground">R$27,90 à vista</span>
+          <span className="text-muted-foreground">— Pagamento único, sem mensalidades!</span>
         </div>
       </motion.div>
 
@@ -141,16 +142,16 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
           </div>
         ))}
 
-        {/* Card Destaque ExcelMax */}
+        {/* Card Destaque ExcelMax Vitalício */}
         <div className="flex items-center justify-between px-4 py-4 rounded-xl bg-primary/15 border-2 border-primary/60 text-left shadow-lg shadow-primary/25">
           <div>
-            <span className="text-base font-bold text-primary block">ExcelMax PRO</span>
+            <span className="text-base font-bold text-primary block">ExcelMax VITALÍCIO</span>
             <span className="text-xs text-primary/80">Fórmulas, Dashboards & Power Query</span>
           </div>
           <div className="flex flex-col items-end gap-1">
-            <span className="text-lg font-extrabold text-primary">R$67/ano</span>
+            <span className="text-lg font-extrabold text-primary">R$27,90</span>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold">
-              40x MAIS BARATO
+              PAGAMENTO ÚNICO
             </span>
           </div>
         </div>
@@ -164,7 +165,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         onClick={onSelectPlan}
         className="w-full py-4.5 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-lg tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all mb-6"
       >
-        <span>GARANTIR EXCELMAX PRO</span>
+        <span>GARANTIR ACESSO VITALÍCIO POR R$27,90</span>
         <ArrowRight className="w-5 h-5" />
       </motion.button>
 
