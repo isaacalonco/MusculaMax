@@ -4,9 +4,7 @@ import { Header } from './components/Header';
 import { HeroQuiz, type QuizQuestion } from './components/HeroQuiz';
 import { StepsTimeline } from './components/StepsTimeline';
 import { PriceReveal } from './components/PriceReveal';
-import { LeadFormModal } from './components/LeadFormModal';
 import { SecurityBadge } from './components/SecurityBadge';
-import { CheckCircle2 } from 'lucide-react';
 
 const quizQuestions: QuizQuestion[] = [
   {
@@ -51,8 +49,7 @@ export function App() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [scores, setScores] = useState<number[]>([]);
   const [levels, setLevels] = useState<('travado' | 'ativo' | 'pronto')[]>([]);
-  const [phase, setPhase] = useState<'quiz' | 'timeline' | 'offer' | 'success'>('quiz');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [phase, setPhase] = useState<'quiz' | 'timeline' | 'offer'>('quiz');
 
   const totalQuestions = quizQuestions.length;
 
@@ -75,6 +72,12 @@ export function App() {
   const prontoCount = levels.filter((l) => l === 'pronto').length;
   const overallDiagnostic: 'travado' | 'ativo' | 'pronto' =
     travadoCount >= 2 ? 'travado' : prontoCount >= 2 ? 'pronto' : 'ativo';
+
+  // Redirecionamento DIRETO para o Gateway sem modal intermediário
+  const handleDirectCheckout = () => {
+    const checkoutUrl = import.meta.env.VITE_CHECKOUT_URL || 'https://pay.kiwify.com.br/checkout-demo';
+    window.location.href = checkoutUrl;
+  };
 
   return (
     <div className="min-h-screen flex flex-col justify-between items-center bg-background text-foreground">
@@ -127,53 +130,11 @@ export function App() {
               exit={{ opacity: 0, y: -15 }}
               className="w-full"
             >
-              <PriceReveal onSelectPlan={() => setIsModalOpen(true)} />
-            </motion.div>
-          )}
-
-          {phase === 'success' && (
-            <motion.div
-              key="success-phase"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="max-w-md mx-auto px-4 py-12 text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-success/20 text-success mx-auto flex items-center justify-center mb-4 border border-success/40">
-                <CheckCircle2 className="w-10 h-10" />
-              </div>
-              <h2 className="font-display text-4xl font-bold uppercase text-foreground mb-2">
-                FICHA DE TREINO GERADA!
-              </h2>
-              <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
-                Sua avaliação biomecânica foi processada. Em instantes nossa equipe enviará sua ficha personalizada de musculação via WhatsApp.
-              </p>
-              <button
-                onClick={() => {
-                  setPhase('quiz');
-                  setQuestionIndex(0);
-                  setScores([]);
-                  setLevels([]);
-                }}
-                className="px-6 py-3 rounded-xl bg-secondary text-foreground font-body font-bold text-sm border border-border hover:border-primary/50 transition-colors"
-              >
-                Refazer Diagnóstico
-              </button>
+              <PriceReveal onSelectPlan={handleDirectCheckout} />
             </motion.div>
           )}
         </AnimatePresence>
       </main>
-
-      {/* Modal de Formulário de Lead / Checkout */}
-      <LeadFormModal
-        isOpen={isModalOpen}
-        score={calculatedTotalScore}
-        diagnosticLevel={overallDiagnostic}
-        onClose={() => setIsModalOpen(false)}
-        onSuccess={() => {
-          setIsModalOpen(false);
-          setPhase('success');
-        }}
-      />
 
       {/* Rodapé com Badges de Segurança */}
       <SecurityBadge />
