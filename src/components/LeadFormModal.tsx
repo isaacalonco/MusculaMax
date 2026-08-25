@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock, ShieldCheck, AlertCircle, ArrowRight } from 'lucide-react';
+import { X, Lock, ShieldCheck, AlertCircle, ExternalLink } from 'lucide-react';
 import { LeadSchema, sanitizeInput, checkRateLimit, formatPublicError } from '../lib/security';
 import { supabase } from '../lib/supabaseClient';
 
@@ -30,6 +30,8 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
   const [generalError, setGeneralError] = useState<string | null>(null);
 
   if (!isOpen) return null;
+
+  const checkoutUrl = import.meta.env.VITE_CHECKOUT_URL || 'https://pay.kiwify.com.br/checkout-demo';
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -81,8 +83,15 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
       }
 
       onSuccess();
+
+      // 4. Redirecionamento automático seguro para o Gateway de Pagamento
+      if (checkoutUrl) {
+        setTimeout(() => {
+          window.location.href = checkoutUrl;
+        }, 500);
+      }
     } catch (err) {
-      // 4. Erros Sanitizados sem vazamentos (Item 15)
+      // Erros Sanitizados sem vazamentos (Item 15)
       setGeneralError(formatPublicError(err));
     } finally {
       setIsSubmitting(false);
@@ -112,10 +121,10 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
               <Lock className="w-6 h-6" />
             </div>
             <h3 className="font-display text-3xl font-bold uppercase text-foreground leading-tight">
-              LIBERAR ACESSO PRO
+              LIBERAR ACESSO MUSCULAMAX
             </h3>
             <p className="font-body text-xs text-muted-foreground mt-1">
-              Preencha os dados abaixo para receber seu treino personalizado no WhatsApp:
+              Informe seus dados para salvar sua ficha e ser redirecionado ao checkout seguro:
             </p>
           </div>
 
@@ -189,7 +198,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
               )}
             </div>
 
-            {/* Botão de Envio */}
+            {/* Botão de Envio para o Gateway */}
             <motion.button
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
@@ -198,11 +207,11 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
               className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-base tracking-wide shadow-lg shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all disabled:opacity-50"
             >
               {isSubmitting ? (
-                <span>PROCESSANDO...</span>
+                <span>REDIRECIONANDO AO CHECKOUT...</span>
               ) : (
                 <>
-                  <span>RECEBER TREINO NO WHATSAPP</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>IR PARA O CHECKOUT SEGURO</span>
+                  <ExternalLink className="w-4 h-4" />
                 </>
               )}
             </motion.button>
