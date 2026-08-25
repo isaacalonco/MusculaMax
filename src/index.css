@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Cores Base do Tema Dark */
+    --background: 0 0% 5.5%;          /* #0E0E0E */
+    --foreground: 0 0% 95.7%;        /* #F4F4F4 */
+
+    /* Cores de Superfície e Modais */
+    --card: 0 0% 8%;                 /* #141414 */
+    --card-foreground: 0 0% 95.7%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95.7%;
+
+    /* Cores de Ação e Destaque Esportivo */
+    --primary: 22 97% 46%;           /* #EA580C (Laranja Vibrante) */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --accent: 22 97% 46%;            /* #EA580C */
+    --accent-foreground: 0 0% 100%;
+
+    /* Elementos Secundários e Desativados */
+    --secondary: 0 0% 12%;           /* #1F1F1F */
+    --secondary-foreground: 0 0% 95.7%;
+    --muted: 0 0% 15%;               /* #262626 */
+    --muted-foreground: 0 0% 60%;    /* #999999 */
+
+    /* Status e Alertas */
+    --success: 145 63% 27%;          /* #16A34A (Verde Sucesso) */
+    --success-foreground: 0 0% 100%;
+    --destructive: 6 70% 39%;        /* #B91C1C (Vermelho Alerta) */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Bordas e Inputs */
+    --border: 0 0% 20%;              /* #333333 */
+    --input: 0 0% 15%;               /* #262626 */
+    --ring: 22 97% 46%;              /* #EA580C */
+
+    /* Arredondamento Padrão */
+    --radius: 0.5rem;
+
+    /* Tipografia */
+    --font-display: "Bebas Neue", sans-serif;
+    --font-body: "Montserrat", sans-serif;
+  }
+}
+
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-success: hsl(var(--success));
+  --color-destructive: hsl(var(--destructive));
+}
+
+html, body {
+  font-family: var(--font-body);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* Glassmorphism e Glow Effects Customizados */
+.bg-glow-radial {
+  background-color: hsl(var(--primary) / 0.4);
+  filter: blur(40px);
+  transform: scale(1.5);
+}
