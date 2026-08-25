@@ -51,12 +51,12 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
       animate="visible"
       className="py-6 sm:py-8 w-full max-w-md mx-auto px-4 sm:px-6 text-center"
     >
-      {/* Badge de Pré-lançamento Vitalício */}
-      <motion.div variants={itemVariants} className="flex justify-center mb-5">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/35 text-primary text-xs sm:text-sm font-bold shadow-sm shadow-primary/20">
-          <Zap className="w-4 h-4" />
-          <span>OFERTA VITALÍCIA EXCELMAX — ÚLTIMAS VAGAS</span>
-        </span>
+      {/* Badge de Pré-lançamento Vitalício Formatado */}
+      <motion.div variants={itemVariants} className="flex justify-center mb-6">
+        <div className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-[11px] sm:text-xs font-bold tracking-wider uppercase shadow-md shadow-primary/10 max-w-full text-center">
+          <Zap className="w-3.5 h-3.5 text-primary shrink-0 animate-pulse" />
+          <span className="leading-tight">OFERTA VITALÍCIA EXCELMAX • ÚLTIMAS VAGAS</span>
+        </div>
       </motion.div>
 
       {/* Eyebrow Label */}
@@ -86,22 +86,22 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         {/* Preço Promocional Vitalício com Glow Radial */}
         <motion.div
           variants={itemVariants}
-          className="relative my-4"
+          className="relative my-4 flex flex-col items-center justify-center"
         >
-          <div className="text-6xl sm:text-7xl font-display font-bold text-primary relative inline-block">
-            R$27,90
-            <span className="text-xl sm:text-2xl font-semibold text-foreground/80 block sm:inline sm:ml-2">
-              (Vitalício)
-            </span>
+          <div className="text-5xl sm:text-6xl font-display font-bold text-primary relative inline-block">
+            R$ 27,90
             {/* Glow Blur Background */}
             <div className="absolute inset-0 blur-2xl bg-primary/40 -z-10 scale-150 rounded-full animate-pulse" />
           </div>
+          <span className="text-xs font-bold uppercase tracking-widest text-primary/90 mt-1">
+            PAGAMENTO ÚNICO • VITALÍCIO
+          </span>
         </motion.div>
 
         {/* Pagamento Único Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs bg-primary/10 border border-primary/20">
-          <span className="font-bold text-foreground">R$27,90 à vista</span>
-          <span className="text-muted-foreground">— Pagamento único, sem mensalidades!</span>
+          <span className="font-bold text-foreground">R$ 27,90 à vista</span>
+          <span className="text-muted-foreground">— Sem mensalidades!</span>
         </div>
       </motion.div>
 
@@ -149,7 +149,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
             <span className="text-xs text-primary/80">Fórmulas, Dashboards & Power Query</span>
           </div>
           <div className="flex flex-col items-end gap-1">
-            <span className="text-lg font-extrabold text-primary">R$27,90</span>
+            <span className="text-lg font-extrabold text-primary">R$ 27,90</span>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold">
               PAGAMENTO ÚNICO
             </span>
@@ -165,7 +165,7 @@ export const PriceReveal: React.FC<PriceRevealProps> = ({ onSelectPlan }) => {
         onClick={onSelectPlan}
         className="w-full py-4.5 px-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-body font-bold text-lg tracking-wide shadow-xl shadow-primary/40 flex items-center justify-center gap-2 cursor-pointer transition-all mb-6"
       >
-        <span>GARANTIR ACESSO VITALÍCIO POR R$27,90</span>
+        <span>GARANTIR ACESSO VITALÍCIO POR R$ 27,90</span>
         <ArrowRight className="w-5 h-5" />
       </motion.button>
 
